@@ -1,0 +1,35 @@
+<!--index.wxml-->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" style="height:450rpx">
+  <block wx:for="{{bizinfo}}">
+    <swiper-item>
+      <image class="recommend" src="{{item.big_image}}" bindtap="toast"></image>
+    </swiper-item>
+  </block>
+</swiper>
+
+<scroll-view class="allclasses" scroll-x>
+  <view class="classes">
+    <block wx:for="{{content}}">
+      <image class="class" src="{{item.ch_image}}" bindtap="toast"></image>
+    </block>
+  </view>
+</scroll-view>
+
+<view class="new">
+  <view class="line1"></view>
+  <view class="word">最新资讯</view>
+  <view class="line2"></view>
+</view>
+
+<!-- <view class="advertise">
+  <view wx:for="{{info}}">
+    <image class="adv" src="{{item.image}}" bindtap="toast"></image>
+    <text class="title">{{item.ch_title}}</text>
+  </view>
+</view>  -->
+
+ <view class="advertise">
+  <block wx:for="{{info}}">
+    <view class="adv" bindtap="toast" style="background-image: url('{{item.image}}')">{{item.ch_title}}</view>
+  </block>
+</view> 
